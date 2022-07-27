@@ -111,12 +111,10 @@ function renderStep(step, options) {
 
     document.getElementById('user-code').innerText =
       options.deviceCode.user_code
-    document.getElementById('tenant-activation-link').innerText = `${
-      config.tenant
-    }/activate`
-    document.getElementById('tenant-activation-link').href = `https://${
-      config.tenant
-    }/activate`
+    document.getElementById('tenant-activation-link').innerText =
+        options.deviceCode.verification_uri_complete
+    document.getElementById('tenant-activation-link').href =
+        options.deviceCode.verification_uri_complete
   }
 
   if (step === 'complete') {
